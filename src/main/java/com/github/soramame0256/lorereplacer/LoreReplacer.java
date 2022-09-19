@@ -1,13 +1,11 @@
 package com.github.soramame0256.lorereplacer;
 
-import com.github.soramame0256.lorereplacer.addon.util.proxy.CommonProxy;
+import com.github.soramame0256.lorereplacer.addon.util.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-
-import java.io.IOException;
 
 @Mod(
         modid = LoreReplacer.MOD_ID,
@@ -27,7 +25,7 @@ public class LoreReplacer {
     public static LoreReplacer INSTANCE;
     public static DataUtils dataUtils;
 
-    public static final String CLIENT_PROXY = "com.github.soramame0256.lorereplacer.addon.util.CommonProxy";
+    public static final String CLIENT_PROXY = "com.github.soramame0256.lorereplacer.addon.util.ClientProxy";
     @SidedProxy(clientSide = CLIENT_PROXY)
     public static CommonProxy proxy;
     /**

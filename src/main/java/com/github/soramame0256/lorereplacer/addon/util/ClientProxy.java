@@ -1,9 +1,8 @@
-package com.github.soramame0256.lorereplacer.addon.util.proxy;
+package com.github.soramame0256.lorereplacer.addon.util;
 
 import com.github.soramame0256.lorereplacer.*;
-import com.github.soramame0256.lorereplacer.addon.util.proxy.CommonProxy;
+import com.github.soramame0256.lorereplacer.addon.util.CommonProxy;
 import com.github.soramame0256.lorereplacer.addon.util.event.EventManager;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.client.ClientCommandHandler;

@@ -1,4 +1,4 @@
-package com.github.soramame0256.lorereplacer.addon.util.proxy;
+package com.github.soramame0256.lorereplacer.addon.util;
 
 import com.github.soramame0256.lorereplacer.LoreReplacer;
 import net.minecraftforge.fml.common.Mod;

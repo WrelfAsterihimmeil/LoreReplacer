@@ -1,6 +1,5 @@
 package com.github.soramame0256.lorereplacer.addon.util;
 
-import com.github.soramame0256.lorereplacer.addon.util.proxy.ClientProxy;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
