@@ -6,8 +6,8 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class KeyInputHandler {
     public KeyInputHandler(){
-        prevKeyStates = new boolean[6];
-        keyStates = new boolean[6];
+        prevKeyStates = new boolean[1];
+        keyStates = new boolean[1];
     }
 
     public static boolean Triggered(int index)
