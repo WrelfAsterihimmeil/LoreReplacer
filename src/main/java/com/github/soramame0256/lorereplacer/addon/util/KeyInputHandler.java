@@ -26,17 +26,27 @@ public class KeyInputHandler {
     @SubscribeEvent()
     public void onTickKeyCheck(TickEvent.ClientTickEvent event) {
         KeyBinding[] keyBinds = ClientProxy.keyBindings;
+        //Saving key states
+        for(int i = 0; i < keyStates.length; i ++)
+        {
+            prevKeyStates[i] = keyStates[i];
+        }
+
+        if(Down(0))
+        {
+            int i = 0;
+        }
 
         for(int i = 0; i < keyStates.length; i ++)
         {
             keyStates[i] = keyBinds[i].isKeyDown();
         }
 
-        //Saving key states
-        for(int i = 0; i < keyStates.length; i ++)
+        if(Triggered(0))
         {
-            prevKeyStates[i] = keyStates[i];
+            int i =1;
         }
+
     }
 
     public static boolean[] keyStates;

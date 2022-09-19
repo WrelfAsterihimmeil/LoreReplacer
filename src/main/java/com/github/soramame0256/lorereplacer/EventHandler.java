@@ -1,11 +1,13 @@
 package com.github.soramame0256.lorereplacer;
 
+import com.github.soramame0256.lorereplacer.addon.util.ClientProxy;
 import com.github.soramame0256.lorereplacer.addon.util.KeyInputHandler;
 import com.github.soramame0256.lorereplacer.addon.util.WrelfAddon;
 import com.google.gson.JsonElement;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import org.lwjgl.input.Keyboard;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -21,7 +23,7 @@ public class EventHandler {
         List<String> newLore = new ArrayList<>();
         if(Minecraft.getMinecraft().player == null || dataUtils == null) return;
         //if copy tooltip key is triggered, copy all tooltip content
-        if(KeyInputHandler.Triggered(0))
+        if(Keyboard.isKeyDown(ClientProxy.keyBindings[0].getKeyCode()))
         {
             WrelfAddon.copyToolTip(e.getToolTip());
         }
