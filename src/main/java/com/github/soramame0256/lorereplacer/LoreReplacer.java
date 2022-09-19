@@ -1,8 +1,8 @@
 package com.github.soramame0256.lorereplacer;
 
-import net.minecraftforge.client.ClientCommandHandler;
-import net.minecraftforge.common.MinecraftForge;
+import com.github.soramame0256.lorereplacer.addon.util.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -26,13 +26,17 @@ public class LoreReplacer {
     @Mod.Instance(MOD_ID)
     public static LoreReplacer INSTANCE;
     public static DataUtils dataUtils;
+
+    public static final String CLIENT_PROXY = "com.github.soramame0256.lorereplacer.addon.util.CommonProxy";
+    @SidedProxy(clientSide = CLIENT_PROXY)
+    public static CommonProxy proxy;
     /**
      * This is the first initialization event. Register tile entities here.
      * The registry events below will have fired prior to entry to this method.
      */
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
-
+        proxy.preInit(event);
     }
 
     /**
@@ -40,14 +44,7 @@ public class LoreReplacer {
      */
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        try {
-            dataUtils = new DataUtils("replacers.json");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        MinecraftForge.EVENT_BUS.register(new EventHandler());
-        ClientCommandHandler.instance.registerCommand(new CmdAddReplacer());
-        ClientCommandHandler.instance.registerCommand(new CmdRemoveReplacer());
+        proxy.init(event);
     }
 
     /**
@@ -55,7 +52,7 @@ public class LoreReplacer {
      */
     @Mod.EventHandler
     public void postinit(FMLPostInitializationEvent event) {
-
+        proxy.postInit(event);
     }
 
 
