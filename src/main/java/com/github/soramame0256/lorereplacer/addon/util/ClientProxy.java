@@ -30,6 +30,7 @@ public class ClientProxy extends CommonProxy {
         EventManager.registerHandler();
         ClientCommandHandler.instance.registerCommand(new CmdAddReplacer());
         ClientCommandHandler.instance.registerCommand(new CmdRemoveReplacer());
+        ClientCommandHandler.instance.registerCommand(new CmdReloadReplacer());
 
         keyBindings = new KeyBinding[1];
 
